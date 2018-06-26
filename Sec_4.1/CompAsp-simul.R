@@ -32,7 +32,6 @@ zero <- 1e-7        # threshold used to define a zero value
 
 # objects used to save the results
 time_table <- array(data = 0, dim = c(nsim, 2, length(d)), dimnames = list(nsim = NULL, method = c("exact", "approx"), d = d))
-rho <- array(data = 0, dim = c(nrho, 2, nsim, length(d)), dimnames = list(rho = NULL, method = c("exact", "approx"), nsim = NULL, d = d))
 muh_f <- array(data = 0, dim = c(nrho, nsim, length(d)), dimnames = list(rho = NULL, nsim = NULL, d = d))
 thetah_f <- array(data = 0, dim = c(nrho, nsim, length(d)), dimnames = list(rho = NULL, nsim = NULL, d = d))
 
@@ -54,11 +53,9 @@ for(h in 1:length(d)){
         
         # exact method
         time_table[i, "exact", h] <- system.time(out_exact <- rcglasso_path(X, k = k, method = "exact", verbose = FALSE, minrho = minrho, nrho = nrho))[3]
-        rho[ , "exact", i, h] <- out_exact$rho
         
         # approximated method method
         time_table[i, "approx", h] <- system.time(out_approx <- rcglasso_path(X, k = k, method = "approx", verbose = FALSE, minrho = minrho, nrho = nrho))[3]
-        rho[ , "approx", i, h] <- out_approx$rho
         
         muh_f[, i, h] <- apply(out_exact$muh - out_approx$muh, 2, crossprod)
         thetah_f[, i, h] <- apply(thetah_e - thetah_a, 2, crossprod)
