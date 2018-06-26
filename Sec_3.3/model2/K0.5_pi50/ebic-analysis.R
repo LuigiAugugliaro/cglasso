@@ -24,9 +24,20 @@ for(k in 1:length(n)){
     }
 }
 
+######################################################
+# First part of the Table 2 in Supplementary Materials
+######################################################
 ftable(round(measures[, c(1, 3, 5), , , ],2), col.vars = c(4, 5, 2))
 
-xtable(as.matrix(ftable(round(measures[, c(1, 3, 5), , , ],2), col.vars = c(4, 5, 2))))
+##########################################################
+# Second column of the Figure 1 in Supplementary Materials
+##########################################################
+library(latex2exp)
+
+lgd <- c(TeX('$\\bar{BIC}_{0.0}(\\hat{E}^{\\rho})$'),
+TeX('$\\bar{BIC}_{0.5}(\\hat{E}^{\\rho})$'),
+TeX('$\\bar{BIC}_{1.0}(\\hat{E}^{\\rho})$'))
+pr <- paste(c("0", "20", "40", "60", "80", "100"), "%", sep = "")
 
 par(mfrow = c(2, 1), mai = c(1.02, 1.2, 0.82, 0.42), cex.axis = 1.3, cex.main = 1.5, cex.lab = 1.5, mgp = c(3, 0, 0))
 matplot(n, measures[, c(1, 3, 5), "mean", "Qval", "TPR"], col = 1, type = "b",
