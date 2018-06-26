@@ -30,7 +30,7 @@ for(k in 1:length(n)){
 ftable(round(measures[, c(1, 3, 5), , , ],2), col.vars = c(4, 5, 2))
 
 ##########################################################
-# Second column of the Figure 1 in Supplementary Materials
+# First column of the Figure 1 in Supplementary Materials
 ##########################################################
 library(latex2exp)
 
