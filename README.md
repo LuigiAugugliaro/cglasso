@@ -12,7 +12,4 @@ Authors:
   Veronica Vinciotti - Brunel University (UK)
     e.mail: veronica.vinciotti@brunel.ac.uk
  
- Journal: Submitted to Biostatistics
- 
- Description
- 
+Journal: Submitted to Biostatistics
