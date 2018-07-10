@@ -15,7 +15,7 @@ Authors:
 Journal: Submitted to Biostatistics
 
 Description:
-The censored graphical lasso (cglasso) estimator is an extension of the l1-penalized Gaussian graphical model (Yuan and Lin, 2007) developed to handle datasets with censored observations. This repository contains the R code needed to replicate the simulation study and the analysis reported in the paper entitled "l1-Penalized Censored Gaussian Graphical Model" and submitted to Biostatistics.
+The censored graphical lasso (cglasso) estimator is an extension of the l1-penalized Gaussian graphical model (Yuan and Lin, 2007) developed to handle datasets with censored observations. This repository contains the R code needed to replicate the simulation studies and the analysis reported in the paper entitled "l1-Penalized Censored Gaussian Graphical Model" (submitted to Biostatistics).
 
 References
 
